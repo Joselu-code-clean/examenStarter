@@ -2,16 +2,18 @@ package com.bootcamp.nttdata.examenStarter;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import com.bootcamp.nttdata.examenStarter.singleton.SingletonAlmacen;
+
 @ConfigurationProperties(prefix = "almacen")
 public class AlmacenProperties {
 
-	private Almacen almacen;
+	private SingletonAlmacen almacen = SingletonAlmacen.getInstance();
 
-	public Almacen getAlmacen() {
+	public SingletonAlmacen getAlmacen() {
 		return almacen;
 	}
 
-	public void setAlmacen(Almacen almacen) {
+	public void setAlmacen(SingletonAlmacen almacen) {
 		this.almacen = almacen;
 	}
 

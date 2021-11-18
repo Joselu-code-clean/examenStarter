@@ -2,6 +2,7 @@ package com.bootcamp.nttdata.examenStarter;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -16,8 +17,9 @@ public class AlmacenAutoConfigure {
 		this.properties = properties;
 	}
 	
+	@Bean
 	public Almacen comprobarAlmacen() {
-		System.out.println("Insertando en el almacen... Producto: " + properties.getAlmacen());
+		System.out.println("Creando Bean del almacen... " + properties.getAlmacen());
 		return new Almacen();
 	}
 
